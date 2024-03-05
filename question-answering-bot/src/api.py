@@ -89,7 +89,13 @@ class DocumentQAAgentService(AgentService):
         # they can be stateful -- using Key-Valued storage and conversation history.
         #
         # See https://docs.steamship.com for a full list of supported Tools.
-        self.tools = [VectorSearchQATool()]
+        self.tools = [VectorSearchQATool(
+             ai_description=(
+                    "Used to answer questions about Computer Graphics. "
+                    "The input is a question about Computer Graphics. "
+                    "The output is the answer to the question."
+                )
+        )]
 
         # Agent Setup
         # ---------------------
